@@ -1,9 +1,9 @@
 language: c
 dist: xenial
 
-branches:
-  only:
-    master
+#branches:
+#  only:
+#    master
 
 before_install:
   - sudo apt-get update
