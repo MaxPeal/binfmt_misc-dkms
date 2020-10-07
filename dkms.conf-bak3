@@ -1,0 +1,17 @@
+PACKAGE_NAME="binfmt_misc"
+PACKAGE_VERSION="1.1.0"
+CLEAN="make clean"
+
+PATCH[0]="000-binfmt_misc-9a08c352d05305ca7651540c3b107da1e4e1f40b..948b701a607f123df92ed29084413e5dd8cda2ed.patch"
+PATCH[1]="001-internal.h-f55532a0c0b8bb6148f4e07853b876ef73bc69ca..9a08c352d05305ca7651540c3b107da1e4e1f40b.patch"
+PATCH[2]="002-open.c-f55532a0c0b8bb6148f4e07853b876ef73bc69ca..9a08c352d05305ca7651540c3b107da1e4e1f40b.patch"
+PATCH[3]="003-binfmt_misc.txt-948b701a607f123df92ed29084413e5dd8cda2ed..4af75df6a410ce76d9f60f27b07e5645ecc2c5ed.patch"
+MAKE[0]="make fs/open.o fs/binfmt_misc.ko KERNELVERSION=$kernelver"
+#MAKE[0]="make default KERNELVERSION=$kernelver"
+#MAKE[0]="make -C src/ KERNELDIR=/lib/modules/${kernelver}/build INCLUDEDIR=/lib/modules/${kernelver}/build/include"
+#MAKE[0]="make -C ~/linux-${kernelver}/ KERNELDIR=/lib/modules/${kernelver}/build INCLUDEDIR=/lib/modules/${kernelver}/build/include"
+BUILT_MODULE_NAME[0]="binfmt_misc"
+DEST_MODULE_LOCATION[0]="/kernel/fs/"
+#BUILT_MODULE_LOCATION="/kernel/fs/"
+
+#AUTOINSTALL="yes"

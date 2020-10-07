@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.04 AS build0
 
 # Install packages
 RUN apt-get update
@@ -11,6 +11,6 @@ COPY patches/* ./patches/
 #COPY binfmt_misc.c open.c internal.h ./
 COPY binfmt_misc.c ./
 COPY Makefile dkms.conf ./
-RUN dkms build --verbose . || cat /var/lib/dkms/*/*/build/make.log
+RUN dkms build --debug --verbose . || cat /var/lib/dkms/*/*/build/make.log
 RUN cat /var/lib/dkms/*/*/build/make.log ||:
-RUN dkms install --verbose binfmt_misc/1.1.0
+RUN dkms install --verbose binfmt_misc/1

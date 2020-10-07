@@ -1,0 +1,7 @@
+PACKAGE_NAME="binfmt_misc"
+PACKAGE_VERSION="1"
+CLEAN="make clean"
+#MAKE[0]="make all KERNEL_SRC=/lib/modules/$kernelver/build"
+#BUILT_MODULE_NAME[0]="binfmt_misc"
+#DEST_MODULE_LOCATION[0]="/updates"
+#AUTOINSTALL="yes"
